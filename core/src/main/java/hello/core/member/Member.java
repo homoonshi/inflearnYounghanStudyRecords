@@ -1,5 +1,9 @@
 package hello.core.member;
 
+
+import jakarta.persistence.Entity;
+
+@Entity
 public class Member {
 
   private Long id;
