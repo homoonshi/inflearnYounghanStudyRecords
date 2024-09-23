@@ -1,5 +1,8 @@
 package hello.core.order;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Order {
 
   private Long memberId;
