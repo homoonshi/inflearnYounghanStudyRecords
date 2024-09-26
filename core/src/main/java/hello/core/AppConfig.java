@@ -8,6 +8,7 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,6 +18,10 @@ public class AppConfig {
   // @Bean -> memberService -> new MemoryMemberRepository()
   // @Bean -> orderService -> 또 memberRepository? -> 또 new MemoryMemberRepository()? -> 싱글톤 깨지는거 아니야?
   // 과연 깨질까요 ?
+
+  // configuration 에서 한정적으로 쓰는 필드 주입 (웬만하면 쓰지 않기)
+//  @Autowired MemberRepository memberRepository;
+//  @Autowired DiscountPolicy discountPolicy;
 
   @Bean
   public MemberService memberService(){
@@ -34,6 +39,7 @@ public class AppConfig {
   public OrderService orderService(){
     System.out.println("call AppConfig.orderService");
     return new OrderServiceImpl(memberRepository(), discountPolicy());
+//    return null;
   }
 
   @Bean
