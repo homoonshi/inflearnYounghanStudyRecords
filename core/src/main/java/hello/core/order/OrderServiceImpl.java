@@ -1,10 +1,12 @@
 package hello.core.order;
 
+import hello.core.annotation.mainDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.discount.DiscountPolicy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
@@ -12,14 +14,17 @@ import org.springframework.stereotype.Component;
 //@RequiredArgsConstructor // final 붙은 애들을 생성자 만들어줌 -> 생성자 주입
 public class OrderServiceImpl implements OrderService{
 
-  @Autowired private final MemberRepository memberRepository;
-  @Autowired private final DiscountPolicy discountPolicy;
+  private final MemberRepository memberRepository;
+  private final DiscountPolicy discountPolicy;
 
   @Autowired
-  public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy){
-    this.memberRepository = memberRepository;
-    this.discountPolicy = discountPolicy;
-  }
+  private DiscountPolicy rateDiscountPolicy;
+
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository,@mainDiscountPolicy DiscountPolicy discountPolicy){
+      this.memberRepository = memberRepository;
+      this.discountPolicy = discountPolicy;
+    }
 
 //  @Autowired
 //  public void setDiscountPolicy(DiscountPolicy discountPolicy) {
