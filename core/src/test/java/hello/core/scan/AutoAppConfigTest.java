@@ -21,8 +21,8 @@ public class AutoAppConfigTest {
         assertThat(memberService).isInstanceOf(MemberService.class);
 
         OrderServiceImpl bean = ac.getBean(OrderServiceImpl.class);
-        MemberRepository memberRepository = bean.getMemberRepository();
-        System.out.println("memberRepository = " + memberRepository);
+//        MemberRepository memberRepository = bean.getMemberRepository();
+//        System.out.println("memberRepository = " + memberRepository);
 
     }
 }
