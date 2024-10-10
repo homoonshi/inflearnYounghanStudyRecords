@@ -26,3 +26,16 @@
 - Section 07 스프링 MVC 기본 기능
 - Section 08 스프링 MVC 웹 페이지 만들기
 - Section 09 다음으로...
+## 모든 개발자를 위한 HTTP 웹 기본 지식
+- 2024.10.01 ~ 2024.10.07
+### 목차
+- Section 01 소개
+- Section 02 인터넷 네트워크
+- Section 03 URI와 웹 브라우저 요청 흐름
+- Section 04 HTTP 기본
+- Section 05 HTTP 메서드
+- Section 06 HTTP 메서드 활용
+- Section 07 HTTP 상태코드
+- Section 08 HTTP 헤더1 - 일반 헤더
+- Section 09 HTTP 헤더2 - 캐시와 조건부 요청
+- Section 10 다음으로...
