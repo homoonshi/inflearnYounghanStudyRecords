@@ -6,10 +6,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Enumeration;
 
 @WebServlet(name = "requestHeaderServlet")
-public class requestHeaderServlet extends HttpServlet {
+public class RequestHeaderServlet extends HttpServlet {
 
   @Override
   protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -24,12 +23,16 @@ public class requestHeaderServlet extends HttpServlet {
 
     System.out.println("---- headers - start ----");
 
-    Enumeration<String> headerNames = request.getHeaderNames();
+//    Enumeration<String> headerNames = request.getHeaderNames();
+//    while(headerNames.hasMoreElements()){
+//      String headerName = headerNames.nextElement();
+//      System.out.println(headerName+" : "+headerName);
+//    }
 
-    while(headerNames.hasMoreElements()){
-      String headerName = headerNames.nextElement();
-      System.out.println(headerName+" : "+headerName);
-    }
+    request.getHeaderNames().asIterator()
+            .forEachRemaining(headerName -> System.out.println("headerName = " + headerName));
+
+
 
     System.out.println("---- headers - end ----");
 
