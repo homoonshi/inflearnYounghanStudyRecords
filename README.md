@@ -15,7 +15,7 @@
 - Section 10 빈 스코프
 - Section 11 다음으로...
 ## 스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술
-- 2024.09.30 ~
+- 2024.09.30 ~ 2024.11.03
 ### 목차
 - Section 01 소개
 - Section 02 웹 애플리케이션 이해
@@ -39,3 +39,19 @@
 - Section 08 HTTP 헤더1 - 일반 헤더
 - Section 09 HTTP 헤더2 - 캐시와 조건부 요청
 - Section 10 다음으로...
+## 스프링 MVC 2편 - 백엔드 웹 개발 활용 기술
+- 2024.11.03 ~
+### 목차
+- Section 01 소개
+- Section 02 타임리프 - 기본 기능
+- Section 03 타임리프 - 스프링 통합과 폼
+- Section 04 메시지, 국제화
+- Section 05 검증1 - Validation
+- Section 06 검증2 - Bean Validation
+- Section 07 로그인 처리 1 - 쿠키, 세션
+- Section 08 로그인 처리 2 - 필터, 인터셉터
+- Section 09 예외 처리와 오류 페이지
+- Section 10 API 예외 처리
+- Section 11 스프링 타입 컨버터
+- Section 12 파일 업로드
+- Section 13 다음으로...
