@@ -55,3 +55,14 @@
 - Section 11 스프링 타입 컨버터
 - Section 12 파일 업로드
 - Section 13 다음으로...
+## 스프링 DB 1편 - 데이터 접근 핵심 원리
+- 2024.12.26 ~
+### 목차
+- Section 01 소개
+- Section 02 JDBC 이해
+- Section 03 커넥션 풀과 데이터소스 이해
+- Section 04 트랜잭션 이해
+- Section 05 스프링과 문제 해결 - 트랜잭션
+- Section 06 자바 예외 이해
+- Section 07 스프링과 문제 해결 - 예외 처리, 반복
+- Section 08 다음으로...
