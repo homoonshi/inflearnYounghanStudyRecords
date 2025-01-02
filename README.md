@@ -56,7 +56,7 @@
 - Section 12 파일 업로드
 - Section 13 다음으로...
 ## 스프링 DB 1편 - 데이터 접근 핵심 원리
-- 2024.12.26 ~
+- 2024.12.26 ~ 2025.01.02
 ### 목차
 - Section 01 소개
 - Section 02 JDBC 이해
@@ -66,3 +66,19 @@
 - Section 06 자바 예외 이해
 - Section 07 스프링과 문제 해결 - 예외 처리, 반복
 - Section 08 다음으로...
+## 스프링 DB 2편 - 데이터 접근 활용 기술
+- 2024.01.02 ~
+### 목차
+- Section 01 소개
+- Section 02 데이터 접근 기술 - 시작
+- Section 03 데이터 접근 기술 - 스프링 JdbcTemplate
+- Section 04 데이터 접근 기술 - 테스트
+- Section 05 데이터 접근 기술 - MyBatis
+- Section 06 데이터 접근 기술 - JPA
+- Section 07 데이터 접근 기술 - 스프링 데이터 JPA
+- Section 08 데이터 접근 기술 - Querydsl
+- Section 09 데이터 접근 기술 - 활용 방안
+- Section 10 스프링 트랜잭션 이해
+- Section 11 스프링 트랜잭션 전파1 - 기본
+- Section 12 스프링 트랜잭션 전파2 - 활용
+- Section 13 다음으로...
