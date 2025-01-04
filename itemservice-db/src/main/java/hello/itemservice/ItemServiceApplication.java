@@ -1,5 +1,8 @@
 package hello.itemservice;
 
+import hello.itemservice.config.JdbcTemplateV1Config;
+import hello.itemservice.config.JdbcTemplateV2Config;
+import hello.itemservice.config.JdbcTemplateV3Config;
 import hello.itemservice.config.MemoryConfig;
 import hello.itemservice.repository.ItemRepository;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +11,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 
-@Import(MemoryConfig.class)
+//@Import(MemoryConfig.class)
+//@Import(JdbcTemplateV1Config.class)
+//@Import(JdbcTemplateV2Config.class)
+@Import(JdbcTemplateV3Config.class)
+
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
