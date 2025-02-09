@@ -83,7 +83,7 @@
 - Section 12 스프링 트랜잭션 전파2 - 활용
 - Section 13 다음으로...
 ## 실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발
-- 2025.01.16 ~
+- 2025.01.16 ~ 2025.02.09
 ### 목차
 - Section 01 소개
 - Section 02 프로젝트 환경 설정
@@ -93,3 +93,18 @@
 - Section 06 상품 도메인 개발
 - Section 07 주문 도메인 개발
 - Section 08 웹 계층 개발
+## 자바 ORM 표준 JPA 프로그래밍 - 기본편
+- 2025.02.09 ~
+### 목차
+- Section 01 소개
+- Section 02 JPA 소개
+- Section 03 JPA 시작하기
+- Section 04 영속성 관리 - 내부 동작 방식
+- Section 05 엔티티 매핑
+- Section 06 연관관계 매핑 기초
+- Section 07 다양한 연관관계 매핑
+- Section 08 고급 매핑
+- Section 09 프록시와 연관관계 관리
+- Section 10 값 타입
+- Section 11 객체지향 쿼리 언어1 - 기본 문법
+- Section 12 객체지향 쿼리 언어2 - 중급 문법
