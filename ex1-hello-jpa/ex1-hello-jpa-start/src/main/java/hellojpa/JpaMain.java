@@ -16,20 +16,48 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member = new Member();
-            member.setId(2L);
-            member.setName("HelloB");
-            em.persist(member);
+//            Member member = new Member();
+//            member.setId(2L);
+//            member.setName("HelloB");
+//            em.persist(member);
+//
+//            Member findMember = em.find(Member.class, 2L);
+//            findMember.setName("HelloJPA");
+//
+//            List<Member> result = em.createQuery("select m from Member as m", Member.class)
+//                    .getResultList();
+//
+//            for (Member mem : result) {
+//                System.out.println("member.name = " + mem.getName());
+//            }
 
-            Member findMember = em.find(Member.class, 2L);
-            findMember.setName("HelloJPA");
+//            // 비영속
+//            Member member = new Member();
+//            member.setId(101L);
+//            member.setName("HelloJPA");
+//
+//            // 영속
+//            System.out.println("=== BEFORE ===");
+//            em.persist(member);
+//            System.out.println("=== AFTER ===");
+//
+//            Member findMember = em.find(Member.class, 101L);
+//
+//            System.out.println("findMember = " + findMember.getId());
+//            System.out.println("findMember = " + findMember.getName());
 
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .getResultList();
+//            Member member1 = new Member(150L, "A");
+//            Member member2 = new Member(160L, "B");
+//
+//            em.persist(member1);
+//            em.persist(member2);
+//
+//            System.out.println("==========================");
 
-            for (Member mem : result) {
-                System.out.println("member.name = " + mem.getName());
-            }
+//            Member member = new Member(200L, "member200");
+//            em.persist(member);
+//            em.flush();
+//            System.out.println("==========================");
 
             tx.commit();
         }catch (Exception e){
