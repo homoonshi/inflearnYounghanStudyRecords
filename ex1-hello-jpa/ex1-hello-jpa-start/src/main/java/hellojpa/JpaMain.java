@@ -59,6 +59,19 @@ public class JpaMain {
 //            em.flush();
 //            System.out.println("==========================");
 
+            Member member1 = new Member();
+            member1.setName("A");
+            Member member2 = new Member();
+            member2.setName("B");
+            Member member3 = new Member();
+            member3.setName("C");
+
+            System.out.println("====================");
+            em.persist(member1); // 1, 51
+            em.persist(member2); // MEMORY
+            em.persist(member3); // MEMORY
+            System.out.println("====================");
+
             tx.commit();
         }catch (Exception e){
             tx.rollback();
