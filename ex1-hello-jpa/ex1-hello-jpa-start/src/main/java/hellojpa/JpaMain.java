@@ -1,5 +1,7 @@
 package hellojpa;
 
+import hellojpa.domain.Member;
+import hellojpa.domain.Team;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -59,18 +61,98 @@ public class JpaMain {
 //            em.flush();
 //            System.out.println("==========================");
 
-            Member member1 = new Member();
-            member1.setName("A");
-            Member member2 = new Member();
-            member2.setName("B");
-            Member member3 = new Member();
-            member3.setName("C");
+//            Member member1 = new Member();
+//            member1.setName("A");
+//            Member member2 = new Member();
+//            member2.setName("B");
+//            Member member3 = new Member();
+//            member3.setName("C");
+//
+//            System.out.println("====================");
+//            em.persist(member1); // 1, 51
+//            em.persist(member2); // MEMORY
+//            em.persist(member3); // MEMORY
+//            System.out.println("====================");
 
-            System.out.println("====================");
-            em.persist(member1); // 1, 51
-            em.persist(member2); // MEMORY
-            em.persist(member3); // MEMORY
-            System.out.println("====================");
+            // 단방향 매핑관계 사용 전
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setTeamId(team.getId());
+//            em.persist(member);
+//
+//            Member findMember = em.find(Member.class, member.getId());
+//
+//            Long findTeamId = findMember.getTeamId();
+//            Team findTeam = em.find(Team.class, findTeamId);
+
+            // 단방향 매핑관계 사용 후
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setTeam(team);
+//            em.persist(member);
+//
+//            Member findMember = em.find(Member.class, member.getId());
+//            Team findTeam = findMember.getTeam();
+//
+//            System.out.println("findTeam = " + findTeam.getName());
+//
+//            Team newTeam = em.find(Team.class, 100L);
+//            findMember.setTeam(newTeam);
+
+            // 양방향 연관관계
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.setTeam(team);
+//            em.persist(member);
+//
+//            Member findMember = em.find(Member.class, member.getId());
+//            List<Member> members = findMember.getTeam().getMembers();
+//
+//            for (Member m : members) {
+//                System.out.println("m.getUsername() = " + m.getUsername());
+//            }
+
+            // 양방향 연관관계 주인에 값 입력 X
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            em.persist(member);
+//
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            team.getMembers().add(member);
+//            em.persist(team);
+
+            // 연관관계의 주인 입력 O
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.changeTeam(team);
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            Team findTeam = em.find(Team.class, team.getId());
+            List<Member> members = findTeam.getMembers();
+
+            for (Member m : members) {
+                System.out.println("m = " + m.getUsername());
+            }
 
             tx.commit();
         }catch (Exception e){
