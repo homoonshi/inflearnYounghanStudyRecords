@@ -1,9 +1,12 @@
 package hellojpa;
 
+import hellojpa.domain.Item;
 import hellojpa.domain.Member;
+import hellojpa.domain.Movie;
 import hellojpa.domain.Team;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class JpaMain {
@@ -134,25 +137,48 @@ public class JpaMain {
 //            team.getMembers().add(member);
 //            em.persist(team);
 
-            // 연관관계의 주인 입력 O
-            Team team = new Team();
-            team.setName("TeamA");
-            em.persist(team);
+//            // 연관관계의 주인 입력 O
+//            Team team = new Team();
+//            team.setName("TeamA");
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.changeTeam(team);
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Team findTeam = em.find(Team.class, team.getId());
+//            List<Member> members = findTeam.getMembers();
+//
+//            for (Member m : members) {
+//                System.out.println("m = " + m.getUsername());
+//            }
+
+//            Movie movie = new Movie();
+//            movie.setDirector("aaaa");
+//            movie.setActor("bbbb");
+//            movie.setName("바람과 함께 사라지다");
+//            movie.setPrice(10000);
+//
+//            em.persist(movie);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Item findItem = em.find(Item.class, movie.getId());
+//            System.out.println("findMovie = " + findItem.getId());
 
             Member member = new Member();
-            member.setUsername("member1");
-            member.changeTeam(team);
-            em.persist(member);
+            member.setUsername("user1");
+            member.setCreatedBy("kim");
+            member.setCreatedDate(LocalDateTime.now());
 
+            em.persist(member);
             em.flush();
             em.clear();
-
-            Team findTeam = em.find(Team.class, team.getId());
-            List<Member> members = findTeam.getMembers();
-
-            for (Member m : members) {
-                System.out.println("m = " + m.getUsername());
-            }
 
             tx.commit();
         }catch (Exception e){
