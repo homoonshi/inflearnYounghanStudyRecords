@@ -5,6 +5,8 @@ import hellojpa.domain.Member;
 import hellojpa.domain.Movie;
 import hellojpa.domain.Team;
 import jakarta.persistence.*;
+import org.hibernate.Hibernate;
+import org.hibernate.jpa.internal.PersistenceUnitUtilImpl;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -171,21 +173,81 @@ public class JpaMain {
 //            Item findItem = em.find(Item.class, movie.getId());
 //            System.out.println("findMovie = " + findItem.getId());
 
-            Member member = new Member();
-            member.setUsername("user1");
-            member.setCreatedBy("kim");
-            member.setCreatedDate(LocalDateTime.now());
+//            Member member = new Member();
+//            member.setUsername("user1");
+//            member.setCreatedBy("kim");
+//            member.setCreatedDate(LocalDateTime.now());
+//
+//            em.persist(member);
+//            em.flush();
+//            em.clear();
 
-            em.persist(member);
+//            Member member = em.find(Member.class, 1L);
+//            printMember(member);
+////            printMemberAndTeam(member);
+
+            Member member1 = new Member();
+            member1.setUsername("hello1");
+            em.persist(member1);
+
+            Member member2 = new Member();
+            member2.setUsername("hello2");
+            em.persist(member2);
+
             em.flush();
             em.clear();
+
+            Member refMember = em.getReference(Member.class, member1.getId());
+            System.out.println("refMember = " + refMember.getClass());
+            System.out.println("isLoaded() = " + emf.getPersistenceUnitUtil().isLoaded(refMember)); // 프록시 인스턴스 초기화 여부 확인
+            Hibernate.initialize(refMember); // 강제 초기화
+
+//            em.detach(refMember);
+//
+//            System.out.println("refMember = " + refMember.getUsername());
+
+
+//            Member findMember = em.find(Member.class, member1.getId());
+//            System.out.println("findMember = " + findMember.getClass());
+//
+//            System.out.println("findMember == refMember " + (findMember == refMember));
+
+
+//            Member m2 = em.getReference(Member.class, member2.getId());
+
+
+//            System.out.println("m2 = " + m2.getClass());
+//            System.out.println("m1 == m2 : " + (m1 instanceof Member));
+//            System.out.println("m1 == m2 : " + (m2 instanceof Member));
+//            System.out.println("m1 == m2 : " + (m1.getClass() == m2.getClass()));
+
+//            Member findMember = em.getReference(Member.class, member1.getId());
+
+//            Member findMember = em.find(Member.class, member.getId());
+//            System.out.println("findMember.getClass() = " + findMember.getClass());
+//            System.out.println("findMember.getId() = " + findMember.getId());
+//            System.out.println("findMember.getUsername() = " + findMember.getUsername());
 
             tx.commit();
         }catch (Exception e){
             tx.rollback();
+            e.printStackTrace();
         }finally {
             em.close();
         }
         emf.close();
     }
+
+    private static void printMember(Member member) {
+        System.out.println("member.getUsername() = " + member.getUsername());
+    }
+
+    private static void printMemberAndTeam(Member member) {
+        String username = member.getUsername();
+        System.out.println("username = " + username);
+
+        Team team = member.getTeam();
+        System.out.println("team.getName() = " + team.getName());
+    }
+
 }
