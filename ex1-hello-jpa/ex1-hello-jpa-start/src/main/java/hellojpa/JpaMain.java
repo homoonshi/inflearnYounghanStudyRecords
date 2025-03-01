@@ -1,15 +1,13 @@
 package hellojpa;
 
-import hellojpa.domain.Item;
-import hellojpa.domain.Member;
-import hellojpa.domain.Movie;
-import hellojpa.domain.Team;
+import hellojpa.domain.*;
 import jakarta.persistence.*;
 import org.hibernate.Hibernate;
 import org.hibernate.jpa.internal.PersistenceUnitUtilImpl;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 public class JpaMain {
 
@@ -186,21 +184,21 @@ public class JpaMain {
 //            printMember(member);
 ////            printMemberAndTeam(member);
 
-            Member member1 = new Member();
-            member1.setUsername("hello1");
-            em.persist(member1);
-
-            Member member2 = new Member();
-            member2.setUsername("hello2");
-            em.persist(member2);
-
-            em.flush();
-            em.clear();
-
-            Member refMember = em.getReference(Member.class, member1.getId());
-            System.out.println("refMember = " + refMember.getClass());
-            System.out.println("isLoaded() = " + emf.getPersistenceUnitUtil().isLoaded(refMember)); // 프록시 인스턴스 초기화 여부 확인
-            Hibernate.initialize(refMember); // 강제 초기화
+//            Member member1 = new Member();
+//            member1.setUsername("hello1");
+//            em.persist(member1);
+//
+//            Member member2 = new Member();
+//            member2.setUsername("hello2");
+//            em.persist(member2);
+//
+//            em.flush();
+//            em.clear();
+//
+//            Member refMember = em.getReference(Member.class, member1.getId());
+//            System.out.println("refMember = " + refMember.getClass());
+//            System.out.println("isLoaded() = " + emf.getPersistenceUnitUtil().isLoaded(refMember)); // 프록시 인스턴스 초기화 여부 확인
+//            Hibernate.initialize(refMember); // 강제 초기화
 
 //            em.detach(refMember);
 //
@@ -228,6 +226,61 @@ public class JpaMain {
 //            System.out.println("findMember.getId() = " + findMember.getId());
 //            System.out.println("findMember.getUsername() = " + findMember.getUsername());
 
+//            Address address = new Address("city", "street", "10000");
+//
+//            Member member1 = new Member();
+//            member1.setUsername("member1");
+//            member1.setHomeAddress(address);
+//            em.persist(member1);
+//
+//            Address copyAddress = new Address(address.getCity(), address.getStreet(), address.getZipcode());
+//
+//            Member member2 = new Member();
+//            member2.setUsername("member2");
+//            member2.setHomeAddress(copyAddress);
+//            em.persist(member2);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setHomeAddress(new Address("homeCity", "street", "10000"));
+
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("족발");
+            member.getFavoriteFoods().add("피자");
+
+            member.getAddressHistory().add(new AddressEntity("old1", "street", "10000"));
+            member.getAddressHistory().add(new AddressEntity("old2", "street", "10000"));
+
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            System.out.println("============ START =============");
+            Member findMember = em.find(Member.class, member.getId());
+
+            // homeCity -> newCity
+//            findMember.getHomeAddress().setCity("newCity"); (X)
+//            Address a = findMember.getHomeAddress();
+//            findMember.setHomeAddress(new Address("newCity", a.getStreet(), a.getZipcode()));
+//
+//            // 치킨 -> 한식
+//            findMember.getFavoriteFoods().remove("치킨");
+//            findMember.getFavoriteFoods().add("한식");
+//
+//            findMember.getAddressHistory().remove(new Address("old1", "street", "10000"));
+//            findMember.getAddressHistory().add(new Address("newCity", "street", "10000"));
+
+//            List<Address> addressHistory = findMember.getAddressHistory();
+//            for (Address address : addressHistory) {
+//                System.out.println("address = " + address.getCity());
+//            }
+//
+//            Set<String> favoriteFoods = findMember.getFavoriteFoods();
+//            for (String favoriteFood : favoriteFoods) {
+//                System.out.println("favoriteFood = " + favoriteFood);
+//            }
+
             tx.commit();
         }catch (Exception e){
             tx.rollback();
@@ -238,16 +291,16 @@ public class JpaMain {
         emf.close();
     }
 
-    private static void printMember(Member member) {
-        System.out.println("member.getUsername() = " + member.getUsername());
-    }
-
-    private static void printMemberAndTeam(Member member) {
-        String username = member.getUsername();
-        System.out.println("username = " + username);
-
-        Team team = member.getTeam();
-        System.out.println("team.getName() = " + team.getName());
-    }
+//    private static void printMember(Member member) {
+//        System.out.println("member.getUsername() = " + member.getUsername());
+//    }
+//
+//    private static void printMemberAndTeam(Member member) {
+//        String username = member.getUsername();
+//        System.out.println("username = " + username);
+//
+//        Team team = member.getTeam();
+//        System.out.println("team.getName() = " + team.getName());
+//    }
 
 }
