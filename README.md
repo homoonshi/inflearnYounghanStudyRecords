@@ -94,7 +94,7 @@
 - Section 07 주문 도메인 개발
 - Section 08 웹 계층 개발
 ## 자바 ORM 표준 JPA 프로그래밍 - 기본편
-- 2025.02.09 ~
+- 2025.02.09 ~ 2025.03.08
 ### 목차
 - Section 01 소개
 - Section 02 JPA 소개
@@ -108,3 +108,14 @@
 - Section 10 값 타입
 - Section 11 객체지향 쿼리 언어1 - 기본 문법
 - Section 12 객체지향 쿼리 언어2 - 중급 문법
+## 실전! 스프링 데이터 JPA
+- 2025.03.08 ~
+### 목차
+- Section 01 소개
+- Section 02 프로젝트 환경설정
+- Section 03 예제 도메인 모델
+- Section 04 공통 인터페이스 기능
+- Section 05 쿼리 메소드 기능
+- Section 06 확장 기능
+- Section 07 스프링 데이터 JPA 분석
+- Section 08 나머지 기능들
