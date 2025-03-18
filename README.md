@@ -120,7 +120,7 @@
 - Section 07 스프링 데이터 JPA 분석
 - Section 08 나머지 기능들
 ## 실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화
-- 2025.03.12 ~
+- 2025.03.12 ~ 2025.03.18
 ### 목차
 - Section 01 소개
 - Section 02 API 개발 기본
@@ -129,3 +129,14 @@
 - Section 05 API 개발 고급 - 컬렉션 조회 최적화
 - Section 06 API 개발 고급 - 실무 필수 최적화
 - Section 07 다음으로...
+## 실전! Querydsl
+- 2025.03.18 ~
+### 목차
+- Section 01 소개
+- Section 02 프로젝트 환경설정
+- Section 03 예제 도메인 모델
+- Section 04 기본 문법
+- Section 05 중급 문법
+- Section 06 실무 활용 - 순수 JPA와 Querydsl
+- Section 07 실무 활용 - 스프링 데이터 JPA와 Querydsl
+- Section 08 스프링 데이터 JPA가 제공하는 Querydsl 기능
