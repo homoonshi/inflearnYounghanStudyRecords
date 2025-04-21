@@ -130,7 +130,7 @@
 - Section 06 API 개발 고급 - 실무 필수 최적화
 - Section 07 다음으로...
 ## 실전! Querydsl
-- 2025.03.18 ~
+- 2025.03.18 ~ 2025.04.22
 ### 목차
 - Section 01 소개
 - Section 02 프로젝트 환경설정
@@ -140,3 +140,21 @@
 - Section 06 실무 활용 - 순수 JPA와 Querydsl
 - Section 07 실무 활용 - 스프링 데이터 JPA와 Querydsl
 - Section 08 스프링 데이터 JPA가 제공하는 Querydsl 기능
+## 김영한의 실전 자바 - 고급 1편, 멀티스레드와 동시성
+- 2025.04.22 ~
+### 목차
+- Section 01 소개
+- Section 02 프로세스와 스레드 소개
+- Section 03 스레드 생성과 실행
+- Section 04 스레드 제어와 생명 주기1
+- Section 05 스레드 제어와 생명 주기2
+- Section 06 메모리 가시성
+- Section 07 동기화 - synchronized
+- Section 08 고급 동기화 - concurrent.Lock
+- Section 09 생산자 소비자 문제1
+- Section 10 생산자 소비자 문제2
+- Section 11 CAS - 동기화와 원자적 연산
+- Section 12 동시성 컬렉션
+- Section 13 스레드 풀과 Executor 프레임워크1
+- Section 14 스레드 풀과 Executor 프레임워크2
+- Section 15 다음으로...
