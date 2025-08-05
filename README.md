@@ -141,7 +141,7 @@
 - Section 07 실무 활용 - 스프링 데이터 JPA와 Querydsl
 - Section 08 스프링 데이터 JPA가 제공하는 Querydsl 기능
 ## 김영한의 실전 자바 - 고급 1편, 멀티스레드와 동시성
-- 2025.04.22 ~
+- 2025.04.22 ~ 2025.08.06
 ### 목차
 - Section 01 소개
 - Section 02 프로세스와 스레드 소개
@@ -158,3 +158,22 @@
 - Section 13 스레드 풀과 Executor 프레임워크1
 - Section 14 스레드 풀과 Executor 프레임워크2
 - Section 15 다음으로...
+## 김영한의 실전 자바 - 고급 2편, I/O, 네트워크, 리플렉션
+- 2025.08.06 ~
+### 목차
+- Section 01 소개
+- Section 02 문자 인코딩
+- Section 03 I/O 기본1
+- Section 04 I/O 기본2
+- Section 05 I/O 활용
+- Section 06 File, Files
+- Section 07 네트워크 - 기본 이론
+- Section 08 네트워크 - 프로그램1
+- Section 09 네트워크 - 프로그램2
+- Section 10 채팅 프로그램
+- Section 11 HTTP - 기본 이론
+- Section 12 HTTP - 서버 만들기
+- Section 13 리플렉션
+- Section 14 애노테이션
+- Section 15 HTTP 서버 활용
+- Section 16 다음으로... 
