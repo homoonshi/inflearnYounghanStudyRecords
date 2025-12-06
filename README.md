@@ -158,22 +158,21 @@
 - Section 13 스레드 풀과 Executor 프레임워크1
 - Section 14 스레드 풀과 Executor 프레임워크2
 - Section 15 다음으로...
-## 김영한의 실전 자바 - 고급 2편, I/O, 네트워크, 리플렉션
-- 2025.08.06 ~
+## 스프링 핵심 원리 고급편
+- 2025.12.06 ~
 ### 목차
 - Section 01 소개
-- Section 02 문자 인코딩
-- Section 03 I/O 기본1
-- Section 04 I/O 기본2
-- Section 05 I/O 활용
-- Section 06 File, Files
-- Section 07 네트워크 - 기본 이론
-- Section 08 네트워크 - 프로그램1
-- Section 09 네트워크 - 프로그램2
-- Section 10 채팅 프로그램
-- Section 11 HTTP - 기본 이론
-- Section 12 HTTP - 서버 만들기
-- Section 13 리플렉션
-- Section 14 애노테이션
-- Section 15 HTTP 서버 활용
-- Section 16 다음으로... 
+- Section 02 예제 만들기
+- Section 03 쓰레드 로컬 - ThreadLocal
+- Section 04 템플릿 메서드 패턴과 콜백 패턴
+- Section 05 프록시 패턴과 데코레이터 패턴
+- Section 06 동적 프록시 기술
+- Section 07 스프링이 지원하는 프록시
+- Section 08 빈 후처리기
+- Section 09 @Aspect AOP
+- Section 10 스프링 AOP 개념
+- Section 11 스프링 AOP 구현
+- Section 12 스프링 AOP - 포인트컷
+- Section 13 스프링 AOP - 실전 예제
+- Section 14 스프링 AOP - 실무 주의사항
+- Section 15 다음으로...
